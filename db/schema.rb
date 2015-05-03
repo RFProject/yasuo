@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503125004) do
+ActiveRecord::Schema.define(version: 20150503141540) do
+
+  create_table "books", force: :cascade do |t|
+    t.string   "turn"
+    t.date     "released_at"
+    t.text     "description"
+    t.string   "image"
+    t.integer  "series_id"
+    t.string   "amazon_url"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "series_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reads", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "series", force: :cascade do |t|
     t.string   "name"
