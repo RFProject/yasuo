@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   resources :reads
-  resources :follows
   resources :books
   get 'pages/' => 'pages#index'
-  resources :series
+  resources :series do
+    resources :follows
+  end
   devise_for :users, controllers: { registrations: 'registrations' }
 
 
   #admin
   namespace :admin do
-    resources :books
-    resources :series
+    resources :series do
+      resources :books
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

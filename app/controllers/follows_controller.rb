@@ -14,7 +14,13 @@ class FollowsController < ApplicationController
 
   # GET /follows/new
   def new
-    @follow = Follow.new
+    @series = Series.find(params[:series_id])
+    @follow = @series.follows.build
+    @follow_vaild = @follow
+    @follow_vaild.user = current_user
+    redirect_to series_index_path,:alert => 'Alredy you have followed this series!' unless @follow_vaild.valid?
+
+
   end
 
   # GET /follows/1/edit
@@ -24,11 +30,13 @@ class FollowsController < ApplicationController
   # POST /follows
   # POST /follows.json
   def create
-    @follow = Follow.new(follow_params)
-
+    @series = Series.find(params[:series_id])
+    @follow = @series.follows.build
+    @follow.user = current_user
+    @follow.series = @series
     respond_to do |format|
       if @follow.save
-        format.html { redirect_to @follow, notice: 'Follow was successfully created.' }
+        format.html { redirect_to series_index_path, notice: 'Follow was successfully created.' }
         format.json { render :show, status: :created, location: @follow }
       else
         format.html { render :new }
@@ -69,6 +77,6 @@ class FollowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def follow_params
-      params.require(:follow).permit(:user_id, :series_id)
+      params.require(:follow).permit(:series_id)
     end
 end

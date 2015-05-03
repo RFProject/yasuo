@@ -1,24 +1,48 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @series.name %>
+	<strong>Name:</strong>
+	<%= @series.name %>
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <%= @series.author %>
+	<strong>Author:</strong>
+	<%= @series.author %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @series.description %>
+	<strong>Description:</strong>
+	<%= @series.description %>
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @series.image %>
+	<strong>Image:</strong>
+	<%= @series.image %>
 </p>
 
-<%= link_to 'Edit', edit_series_path(@series) %> |
-<%= link_to 'Back', series_index_path %>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Trun</th>
+			<th>Released</th>
+			<th>Discription</th>
+			<th>Image</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @series.books.each do |book| %>
+		<tr>
+			<td><%= book.turn %></td>
+			<td><%= book.released_at %></td>
+			<td><%= book.description %></td>
+			<td><%= book.image %></td>
+			<td><%= link_to 'Show', admin_series_book_path(@series,book) %></td>
+			<td><%= link_to 'Edit', edit_admin_series_book_path(@series,book) %></td>
+			<td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to 'Edit', edit_admin_series_path(@series) %> |
+<%= link_to 'Back', admin_series_index_path %>

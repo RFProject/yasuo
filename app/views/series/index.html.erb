@@ -1,37 +1,30 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Series</h1>
-
 <table>
   <div class="col-md-6">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Author</th>
-                <th>Discription</th>
-                <th>Image</th>
-              </tr>
-            </thead>
-            <tbody>
-    	      <% @series.each do |series| %>
-                <tr>
-                  <td><%= series.name %></td>
-                  <td><%= series.author %></td>
-        	  <td><%= series.description %></td>
-        	  <td><%= series.image %></td>
-        	  <td><%= link_to 'Show', series %></td>
-        	  <td><%= link_to 'Edit', edit_series_path(series) %></td>
-        	  <td><%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      		</tr>
-    	      <% end %>
-  	    </tbody>
-          </table>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Discription</th>
+          <th>Image</th>
+          <th>Follow</th>
+        </tr>
+      </thead>
+      <tbody>
+       <% @series.each do |series| %>
+       <tr>
+        <td><%= series.name %></td>
+        <td><%= series.author %></td>
+        <td><%= series.description %></td>
+        <td><%= image_tag series.image %></td>
+        <td><%= link_to 'Follow', new_series_follow_path(series), class: :'btn btn-success' unless series.follows.find_by(user_id: current_user.id)
+          %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-
-  
 </table>
 
 <br>
-
-<%= link_to 'New Series', new_series_path %>

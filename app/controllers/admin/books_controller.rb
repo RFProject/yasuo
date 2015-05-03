@@ -14,21 +14,24 @@ class Admin::BooksController < Admin::Base
 
   # GET /books/new
   def new
-    @book = Book.new
+    @series = Series.find(params[:series_id])
+    @book = @series.books.new
   end
 
   # GET /books/1/edit
   def edit
+    @series = Series.find(params[:series_id])
+    @book = Book.find(params[:id])
   end
 
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
-
+    @series = Series.find(params[:series_id])
+    @book = @series.books.build(book_params)
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to @series, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
