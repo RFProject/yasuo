@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-
+		@follows = current_user.follows
 	end
 end

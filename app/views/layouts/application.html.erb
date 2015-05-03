@@ -42,6 +42,11 @@
 	</div><!--/.nav-collapse -->
 </nav>
   <div class="container">
+	<% if notice %>
+	<p class="alert alert-info" role="alert"><%= notice %></p>
+	<% elsif alert %>
+	<p class="alert alert-danger" role="alert"><%= alert %></p>
+	<% end %>
 	    <%= yield %> <!-- ※この行は各ページを表示するための、最初から存在する。 -->
   </div><!-- /.container -->
 </body>
