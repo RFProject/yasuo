@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   #admin
   namespace :admin do
-    resources :books
-    resources :series
+    resources :series do
+      resources :books
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
