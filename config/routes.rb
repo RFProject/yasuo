@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :books
   get 'pages/' => 'pages#index'
   resources :series
   devise_for :users

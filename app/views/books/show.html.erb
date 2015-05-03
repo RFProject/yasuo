@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Turn:</strong>
+  <%= @book.turn %>
+</p>
+
+<p>
+  <strong>Released at:</strong>
+  <%= @book.released_at %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @book.image %>
+</p>
+
+<p>
+  <strong>Series:</strong>
+  <%= @book.series_id %>
+</p>
+
+<p>
+  <strong>Amazon url:</strong>
+  <%= @book.amazon_url %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
