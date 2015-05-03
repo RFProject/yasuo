@@ -71,4 +71,4 @@ class Admin::BooksController < Admin::Base
     def book_params
       params.require(:book).permit(:turn, :released_at, :description, :image, :series_id, :amazon_url)
     end
-end
+  end

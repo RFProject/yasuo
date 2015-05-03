@@ -1,5 +1,6 @@
 class ReadsController < ApplicationController
   before_action :set_read, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /reads
   # GET /reads.json

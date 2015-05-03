@@ -1,5 +1,6 @@
 class Admin::Base < ApplicationController
   before_filter :admin_login_required
+  before_action :authenticate_user!
 
   private
   def admin_login_required
