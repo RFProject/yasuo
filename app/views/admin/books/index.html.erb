@@ -24,8 +24,8 @@
         <td><%= book.image %></td>
         <td><%= book.series_id %></td>
         <td><%= book.amazon_url %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Show', admin_series_book_path(series_id,book) %></td>
+        <td><%= link_to 'Edit', edit_admin_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<%= link_to 'New Book', new_admin_book_path %>
