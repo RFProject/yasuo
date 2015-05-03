@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th width="150">Name</th>
+      <th>Name     </th>
       <th>Author</th>
       <th>Description</th>
       <th>Image</th>

@@ -15,6 +15,3 @@
  *= require bootstrap
  */
 
-.container{
-	margin-top: 20px;
-}
