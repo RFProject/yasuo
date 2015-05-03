@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reads
+  resources :follows
   resources :books
   get 'pages/' => 'pages#index'
   resources :series
