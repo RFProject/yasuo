@@ -20,15 +20,19 @@
          <td><%= follow.series.author %></td>
          <td><%= follow.series.description %></td>
          <td>
-         <% if follow.next_book %>
+           <% if follow.next_book %>
            Vol.<%= follow.next_book.turn %>
            <br>
-
+           <% if follow.next_book.released_at < Date.today %>
+           Now on sale
+           <% else %>
+              Relese at <%= follow.next_book.released_at %>
+           <% end %>
            <br>
            <%= link_to image_tag('amzon.png'),follow.next_book.amazon_url %>
-         <% else %>
-            Now you have no books to buy!
-         <% end %>
+           <% else %>
+           Now you have no books to buy!
+           <% end %>
          </td>
        </tr>
        <% end %>
