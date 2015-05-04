@@ -19,21 +19,26 @@
  	margin-top: 20px;
  }
 
-<<<<<<< HEAD
+
 body {
 	background-color: #000;
 }
-.image {
-	width :40%;
-	float: left;
-}
-=======
+
  .image {
  	width :20%;
  	float: left;
  }
->>>>>>> 7a659576b06ef0b9fc9dcc8276bb1374035bbb05
 
  .image2 {
  	width: 200px;
  }
+
+a:visited {
+  color: #2FCCD2;
+}
+
+td {
+  width: 10%;
+  table-layout: fixed;
+  word-wrap: break-word;
+}

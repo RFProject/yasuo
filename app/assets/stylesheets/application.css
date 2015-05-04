@@ -25,10 +25,20 @@ body {
 }
 
  .image {
- 	width :20%;
+ 	width :50%;
  	float: left;
  }
 
  .image2 {
  	width: 200px;
  }
+
+a:visited {
+  color: #2FCCD2;
+}
+
+td {
+  width: 10%;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
