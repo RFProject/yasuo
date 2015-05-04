@@ -41,7 +41,7 @@
     </tr>
   </thead>
   <tbody>
-    <%= collection_check_boxes(:user, :book_ids, @series.books.order(:turn), :id, :id) do |b| %>
+    <%= collection_check_boxes(:user, :book_ids, @series.books.order('turn  DESC'), :id, :id) do |b| %>
     <tr>
     <% book = Book.find(b.text) %>
       <td><%= b.check_box %></td>

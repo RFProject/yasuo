@@ -8,7 +8,7 @@
           <th>Name</th>
           <th>Author</th>
           <th>Discription</th>
-
+          <th>Next Volume</th>
         </tr>
       </thead>
       <tbody>
@@ -17,12 +17,22 @@
          <td><%= link_to (image_tag follow.series.image,:class => 'image'), edit_series_user_path(follow.series,current_user) %></td>
          <td><%= link_to follow.series.name, edit_series_user_path(follow.series,current_user) %></td>
 
-        <td><%= follow.series.author %></td>
-        <td><%= follow.series.description %></td>
+         <td><%= follow.series.author %></td>
+         <td><%= follow.series.description %></td>
+         <td>
+         <% if follow.next_book %>
+           Vol.<%= follow.next_book.turn %>
+           <br>
 
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+           <br>
+           <%= link_to image_tag('amzon.png'),follow.next_book.amazon_url %>
+         <% else %>
+            Now you have no books to buy!
+         <% end %>
+         </td>
+       </tr>
+       <% end %>
+     </tbody>
+   </table>
+ </div>
 </table>

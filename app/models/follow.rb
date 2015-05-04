@@ -7,4 +7,13 @@ class Follow < ActiveRecord::Base
 		message: "Alredy you have followed this series!",
 		scope: [:series_id]
 	}
+
+	def next_book
+		self.series.books.all.each do |book|
+			unless self.user.reads.exists?(:book_id => book.id)
+				return book
+			end
+		end
+		return
+	end
 end
