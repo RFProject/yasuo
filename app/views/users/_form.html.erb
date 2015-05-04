@@ -36,7 +36,7 @@
       <th>Read</th>
       <th>Image</th>
       <th>Released</th>
-      <th>Discription</th>
+      <th>Amazon</th>
 
 
     </tr>
@@ -44,12 +44,16 @@
   <tbody>
     <%= collection_check_boxes(:user, :book_ids, @series.books.order('turn  DESC'), :id, :id) do |b| %>
     <tr>
-    <% book = Book.find(b.text) %>
+      <% book = Book.find(b.text) %>
       <td><%= book.turn %></td>
       <td><%= b.check_box %></td>
-      <td><%= image_tag book.image, :class => 'image' %></td>
+      <td>
+      <label for="user_book_ids_<%= b.text %>">
+          <%= image_tag book.image, :class => 'image' %>
+        </label>
+      </td>
       <td><%= book.released_at %></td>
-      <td><%= book.description %></td>
+      <td><%= link_to image_tag('amzon.png'),book.amazon_url %></td>
     </tr>
     <% end %>
   </tbody>
