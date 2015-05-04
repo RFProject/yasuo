@@ -6589,4 +6589,9 @@ tbody {
 thead {
   background-color: #535353;
 }
+
+a {
+  color: #2FCCD2;
+  text-decoration: none;
+}
 /*# sourceMappingURL=bootstrap.css.map */
