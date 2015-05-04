@@ -7,5 +7,4 @@ class User < ActiveRecord::Base
   has_many :series, :through => :follows
   has_many :reads
   has_many :books, :through => :reads
-
 end

@@ -13,7 +13,7 @@
       <tbody>
        <% @follows.each do |follow| %>
        <tr>
-        <td><%= link_to follow.series.name, follow.series %></td>
+        <td><%= link_to follow.series.name, edit_series_user_path(follow.series,current_user) %></td>
         <td><%= follow.series.author %></td>
         <td><%= follow.series.description %></td>
         <td><%= image_tag follow.series.image %></td>
