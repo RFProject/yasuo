@@ -1,4 +1,4 @@
-class ReadsController < ApplicationController
+class UsersController < ApplicationController
   before_action :set_read, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
@@ -45,8 +45,8 @@ class ReadsController < ApplicationController
   # PATCH/PUT /reads/1.json
   def update
     respond_to do |format|
-      if @read.update(read_params)
-        format.html { redirect_to @read, notice: 'Read was successfully updated.' }
+      if @user.update(user_params)
+        format.html { redirect_to edit_series_user_path(params[:series_id],current_user) , notice: 'Read was successfully updated.' }
         format.json { render :show, status: :ok, location: @read }
       else
         format.html { render :edit }
@@ -68,11 +68,11 @@ class ReadsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_read
-      @read = Read.find(params[:id])
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def read_params
-      params.require(:read).permit(:user_id, :book_id)
+    def user_params
+      params.require(:user).permit({:book_ids => []})
     end
 end

@@ -20,5 +20,26 @@
   <%= @series.image %>
 </p>
 
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Trun</th>
+			<th>Released</th>
+			<th>Discription</th>
+			<th>Image</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @books.each do |book| %>
+		<tr>
+			<td><%= book.turn %></td>
+			<td><%= book.released_at %></td>
+			<td><%= book.description %></td>
+			<td><%= book.image %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
 <%= link_to 'Edit', edit_series_path(@series) %> |
 <%= link_to 'Back', series_index_path %>

@@ -19,6 +19,16 @@
 	margin-top: 20px;
 }
 
-.body {
+<<<<<<< HEAD
+body {
 	background-color: #000;
+=======
+.image {
+	width :40%;
+	float: left;
+}
+
+.image2 {
+width: 200px;
+>>>>>>> e0d429fcdb920bad3bf0763fe6932e4539492db3
 }

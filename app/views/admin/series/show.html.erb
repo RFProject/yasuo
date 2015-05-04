@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+	<strong>Image:</strong>
+	<%= @series.image %>
+</p>
+
+<p>
 	<strong>Name:</strong>
 	<%= @series.name %>
 </p>
@@ -15,30 +20,26 @@
 	<%= @series.description %>
 </p>
 
-<p>
-	<strong>Image:</strong>
-	<%= @series.image %>
-</p>
 
 <table class="table table-striped">
 	<thead>
 		<tr>
+			<th>Image</th>
 			<th>Trun</th>
 			<th>Released</th>
 			<th>Discription</th>
-			<th>Image</th>
 		</tr>
 	</thead>
 	<tbody>
-		<% @series.books.each do |book| %>
+		<% @books.each do |book| %>
 		<tr>
+			<td><%= image_tag book.image,:class => 'image' %></td>
 			<td><%= book.turn %></td>
 			<td><%= book.released_at %></td>
 			<td><%= book.description %></td>
-			<td><%= book.image %></td>
 			<td><%= link_to 'Show', admin_series_book_path(@series,book) %></td>
 			<td><%= link_to 'Edit', edit_admin_series_book_path(@series,book) %></td>
-			<td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<td><%= link_to 'Destroy', admin_series_book_path(@series,book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 		<% end %>
 	</tbody>
