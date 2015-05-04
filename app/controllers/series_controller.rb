@@ -11,6 +11,7 @@ class SeriesController < ApplicationController
   # GET /series/1
   # GET /series/1.json
   def show
+    @books = @series.books.order(:turn)
   end
 
   private

@@ -10,6 +10,7 @@ class Admin::SeriesController < Admin::Base
   # GET /series/1
   # GET /series/1.json
   def show
+    @books = @series.books.order(:turn)
   end
 
   # GET /series/new

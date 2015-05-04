@@ -64,7 +64,7 @@ class FollowsController < ApplicationController
   def destroy
     @follow.destroy
     respond_to do |format|
-      format.html { redirect_to follows_url, notice: 'Follow was successfully destroyed.' }
+      format.html { redirect_to series_index_url, notice: 'Follow was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
