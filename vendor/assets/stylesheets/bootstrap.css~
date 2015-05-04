@@ -6585,8 +6585,4 @@ button.close {
 tbody {
   background-color: #808080;
 }
-
-thead {
-  background-color: #535353;
-}
 /*# sourceMappingURL=bootstrap.css.map */

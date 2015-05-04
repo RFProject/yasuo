@@ -13,7 +13,7 @@
   <% end %>
   <%= image_tag(@series.image) %>
   <div class="actions", >
-    <%= f.submit 'follow', :class => 'btn btn-lg btn-primary' %>
+    <%= f.submit, :class => 'btn btn-lg btn-primary' %>
   </div>
 <% end %>
 <%= link_to 'Back', series_index_path %>
