@@ -14,7 +14,7 @@
       <tbody>
        <% @follows.each do |follow| %>
        <tr>
-         <td><%= image_tag follow.series.image,:class => 'image' %></td>
+         <td><%= link_to (image_tag follow.series.image,:class => 'image'), edit_series_user_path(follow.series,current_user) %></td>
          <td><%= link_to follow.series.name, edit_series_user_path(follow.series,current_user) %></td>
 
         <td><%= follow.series.author %></td>
