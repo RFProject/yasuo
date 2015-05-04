@@ -36,9 +36,6 @@
 			<td><%= book.released_at %></td>
 			<td><%= book.description %></td>
 			<td><%= book.image %></td>
-			<td><%= link_to 'Show', admin_series_book_path(@series,book) %></td>
-			<td><%= link_to 'Edit', edit_admin_series_book_path(@series,book) %></td>
-			<td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 		<% end %>
 	</tbody>

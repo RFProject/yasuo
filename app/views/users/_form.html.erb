@@ -1,3 +1,15 @@
+<%= form_for [@series, @user] do |f| %>
+<% if @series.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@series.errors.count, "error") %> prohibited this series from being saved:</h2>
+
+  <ul>
+    <% @series.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 <p>
   <strong>Name:</strong>
   <%= @series.name %>
@@ -32,7 +44,7 @@
   <tbody>
     <%= collection_check_boxes(:user, :book_ids, @series.books.order(:turn), :id, :id) do |b| %>
     <tr>
-      <% book = Book.find(b.text) %>
+    <% book = Book.find(b.text) %>
       <td><%= b.check_box %></td>
       <td><%= book.turn %></td>
       <td><%= book.released_at %></td>
@@ -42,3 +54,7 @@
     <% end %>
   </tbody>
 </table>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

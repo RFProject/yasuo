@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  resources :reads
-  resources :books
   get 'pages/' => 'pages#index'
   resources :series do
     resources :follows
+    resources :users
+    resources :reads
   end
   devise_for :users, controllers: { registrations: 'registrations' }
-
 
   #admin
   namespace :admin do
