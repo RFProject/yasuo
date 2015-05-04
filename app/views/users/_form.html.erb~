@@ -32,12 +32,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Trun</th>
       <th>Read</th>
-      <th>Image</th>
+      <th>Trun</th>
       <th>Released</th>
       <th>Discription</th>
-
+      <th>Image</th>
 
     </tr>
   </thead>

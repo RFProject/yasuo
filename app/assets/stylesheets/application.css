@@ -33,12 +33,15 @@ body {
  	width: 200px;
  }
 
-a:visited {
-  color: #2FCCD2;
-}
+
 
 td {
   width: 10%;
   table-layout: fixed;
   word-wrap: break-word;
+}
+
+a {
+  color: #2FCCD2;
+  text-decoration: none;
 }
