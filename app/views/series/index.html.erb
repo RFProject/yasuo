@@ -4,20 +4,21 @@
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>Image</th>
           <th>Name</th>
           <th>Author</th>
           <th>Discription</th>
-          <th>Image</th>
           <th>Follow</th>
         </tr>
       </thead>
       <tbody>
        <% @series.each do |series| %>
        <tr>
+         <td><%= image_tag series.image, :class => 'image' %></td>
         <td><%= series.name %></td>
         <td><%= series.author %></td>
         <td><%= series.description %></td>
-        <td><%= image_tag series.image, :class => 'image'%></td>
+
         <td>
           <% @follow = series.follows.find_by(user_id: current_user.id) %>
           <% if  @follow %>

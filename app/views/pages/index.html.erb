@@ -4,19 +4,20 @@
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>Image</th>
           <th>Name</th>
           <th>Author</th>
           <th>Discription</th>
-          <th>Image</th>
+
         </tr>
       </thead>
       <tbody>
        <% @follows.each do |follow| %>
        <tr>
+         <td><%= image_tag follow.series.image,:class => 'image' %></td>
         <td><%= link_to follow.series.name, follow.series %></td>
         <td><%= follow.series.author %></td>
         <td><%= follow.series.description %></td>
-        <td><%= image_tag follow.series.image,:class => 'image' %></td>
 
         </tr>
         <% end %>
