@@ -40,3 +40,17 @@ td {
   table-layout: fixed;
   word-wrap: break-word;
 }
+
+.TopPageFeild{
+	position: relative;
+	top:-200px;
+	right:-400px;
+	color: #00FF6F;
+
+}
+
+.AppNamePosition{
+	position: relative;
+	right:-350px;
+	color: #00FF6F;
+}

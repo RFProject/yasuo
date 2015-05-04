@@ -41,7 +41,16 @@ td {
   word-wrap: break-word;
 }
 
-a {
-  color: #2FCCD2;
-  text-decoration: none;
+.TopPageFeild{
+	position: relative;
+	top:-200px;
+	right:-400px;
+	color: #00FF6F;
+
+}
+
+.AppNamePosition{
+	position: relative;
+	right:-375px;
+	color: #00FF6F;
 }
