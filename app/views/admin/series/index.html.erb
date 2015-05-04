@@ -20,7 +20,7 @@
         <td><%= series.name %></td>
         <td><%= series.author %></td>
         <td><%= series.description %></td>
-        <td><%= image_tag series.image %></td>
+        <td><%= series.image %></td>
         <td><%= link_to '巻追加', new_admin_series_book_path(series), class: :'btn btn-success'%></td>
         <td><%= link_to 'Show', admin_series_path(series) %></td>
         <td><%= link_to 'Edit', edit_admin_series_path(series) %></td>

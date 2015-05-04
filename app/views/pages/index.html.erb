@@ -16,7 +16,8 @@
         <td><%= link_to follow.series.name, edit_series_user_path(follow.series,current_user) %></td>
         <td><%= follow.series.author %></td>
         <td><%= follow.series.description %></td>
-        <td><%= image_tag follow.series.image %></td>
+        <td><%= image_tag follow.series.image,:class => 'image' %></td>
+
         </tr>
         <% end %>
       </tbody>
